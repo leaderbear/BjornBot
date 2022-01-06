@@ -1,3 +1,6 @@
+# OLD FILE 
+
+
 import os
 import discord
 from discord.ext import commands, tasks
@@ -12,23 +15,13 @@ from keep_alive import keep_alive
 # implement your own data base like postgres sql or ... 
 #from replit import db
 
-cogs = [music] 
 
 intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
-
 client = commands.Bot(command_prefix = '-')#, intents=intents)
 
-#client = commands.Bot(command_prefix='#', intents = discord.Intents.all())
 
-for i in range(len(cogs)):
-  cogs[i].setup(client)
-
-
-@client.command() 
-async def ping(ctx):
-  await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 
 states = ['123 viva Algérie', 'Benab is the best', 'No more lil poop', 'honorer 3imed', 'Valorant', 'Dota 2', 'Making Gundam', 'Pizza New York', 'Leviosa', 'Minecraft', "Project zomboid", "League of Legends", "See Nayato in Youtube"] 
@@ -69,7 +62,3 @@ async def change_status():
 # runs the bot and keep it online , replace by your own bot token
 keep_alive()
 client.run(os.environ['TOKEN'])
-
-
-
-
